@@ -137,6 +137,10 @@ section.headline h1 {
     left: -30%;
     font-size: 1.75rem;
 }
+section.headline h1:hover {
+    transform: scale(0.95);
+    transition-duration: 0.5s;
+}
 .cat {
     width: 100px;
 }
