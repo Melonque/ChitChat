@@ -1,0 +1,495 @@
+* { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primarycolor: white;
+    --secondarycolor: rgb(81, 81, 81);
+    --accentcolorpink: #fdecf3;
+    --accentcolorgreen: #cfe5ce;
+    --accentcolorpurple: #dddaee;
+    --accentcoloryellow: #f6f4c3;
+}
+body.dark-theme {
+    --primarycolor: rgb(16, 16, 16);
+    --secondarycolor: white;
+    --accentcolorpink: #252525;
+    --accentcolorgreen: rgb(51, 51, 51);
+    --accentcolorpurple: rgb(33, 33, 33);
+    --accentcoloryellow: rgb(78, 78, 78);
+    transition: 1000ms ease-in-out;
+}
+
+@font-face {
+    font-family: MissionGothicThinItalic;
+    
+    src:
+     local('MissionGothicThinItalic'),
+    
+     url('../fonts/MissionGothicThinItalic.woff2') 
+     format('woff2'),
+        
+     url('../fonts/MissionGothicThinItalic.woff') 
+     format('woff'),
+        
+     url('../fonts/MissionGothicThinItalic.ttf')
+     format('truetype');
+}
+@font-face {
+    font-family: MissionGothicBold;
+
+    src: 
+    local('MissionGothicBold'),
+
+    url('../fonts/MissionGothicBold.woff2')
+    format('woff2'),
+
+    url('../fonts/MissionGothicBold.woff')
+    format('woff'),
+
+    url('../fonts/MissionGothicBold.ttf')
+    format('truetype');
+}
+@font-face {
+    font-family: GeneralSans-Extralight;
+
+    src:
+    local('GeneralSans-Extralight'),
+
+    url('../fonts/GeneralSans-Extralight.woff2')
+    format('woff2'),
+
+    url('../fonts/GeneralSans-Extralight.woff')
+    format('woff'),
+
+    url('../fonts/GeneralSans-Extralight.ttf')
+    format('truetype');
+}
+
+body {
+    background-color: var(--primarycolor);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* HEADER */
+header {
+    padding: 5%;
+    display: flex; /* i.f.v linkse en rechtse uitlijning */
+    justify-content: space-between; /* uitlijning links en rechts */
+}
+header .logoheader {
+    width: 140px;
+}
+.header-right{
+    display: flex; /* i.f.v. verticale uitlijning iconen*/
+    align-items: center;
+}
+.header-right .menuknop,
+.header-right .darkmodeknop {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.header-right .menuknop img,
+.header-right .darkmodeknop img {
+    width: 18px; /*ipv 1.2rem*/
+    cursor: pointer;
+}
+.darkmodeknop img:hover {
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
+.menuknop img:hover {
+    transform: scale(1.3);
+    transition-duration: 0.5s;
+}
+
+/*HEADLINE*/
+.headline {
+    transition: 1000ms ease-in-out;
+}
+section.headline article {
+    width:  13rem;
+    background-color:var(--accentcolorpink);
+    border-radius: 20%;
+    margin: auto;
+    position: relative;
+    display: flex; /* om inhoud te centreren */
+    justify-content: center;
+    transition: 500ms ease-in-out;
+}
+section.headline h1 {
+    color: var(--secondarycolor);
+    font-family: MissionGothicThinItalic;
+    position: absolute;
+    left: -30%;
+    font-size: 1.75rem;
+}
+.cat {
+    width: 100px;
+}
+
+/* ARTICLE LIST */
+section.article-list {
+    padding: 10%;
+    position: relative;
+    z-index: 1;
+}
+.article-list article{
+    border-bottom: 1px solid var(--secondarycolor);
+    position: relative;
+}
+.article-list .subgroup {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.7rem;
+    padding-top: 2rem;
+}
+.article-list .date {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.6rem;
+    padding-left: 0.2rem;
+}
+.article-list h2 {
+    color: var(--secondarycolor);
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: MissionGothicBold;
+    padding: 0.1rem 0 0.3rem 0;
+}
+h2:hover {
+    transform: scale(0.95);
+    transition-duration: 0.5s;
+}
+.rechthoek2 {
+    height: 80px;
+    width: 350px;
+    background-color: var(--accentcolorgreen);
+    position: fixed;
+    margin-top: 500px;
+    transition: 500ms ease-in-out;
+}
+.rechthoek3 {
+    height: 60px;
+    width: 150px;
+    background-color: var(--accentcolorpurple);
+    position: fixed;
+    margin-top: 600px;
+    transition: 500ms ease-in-out;
+}
+.cirkel {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: var(--accentcoloryellow);
+    position: fixed; /* ivm overflow:hidden*/
+    right: -20%;
+    bottom: -10%;
+    overflow: hidden; /* cirkel verbergen*/
+    transition: 500ms ease-in-out;
+}
+a {
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    margin: 5%;
+    position: relative; /* in functie van rechts uit te lijnen deel van footer */
+}
+footer .logofooter {
+    display: flex;
+    width: 30px;
+    margin: 0 auto;
+}
+footer .socials{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+footer .socials a {
+    font-family: MissionGothicBold;
+    font-size: 0.6rem;
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+footer .socials img {
+    width: 10px;
+    height: auto;
+}
+footer .socials a:first-child{
+    margin-right: 1rem; /*marge tussen link tekst en icons */
+}
+
+
+
+
+/*TABLET*/
+@media (min-width: 768px) and (max-width:962px){
+    /* HEADER */
+        header {
+            padding: 3%;
+        }
+        header .logoheader {
+            width: 200px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 25px;
+        }
+    /*HEADLINE*/
+        .headline {
+            width: 30rem;
+            display: flex;
+            margin-left: 150px; /* in het midden krijgen van rechthoek + afbeelding */
+            position: absolute;
+        }
+        section.headline article {
+            width:  22rem;
+        }
+        section.headline h1 {
+            font-size: 3.5rem;
+            left: -40%;
+        }
+        .cat {
+            width: 150px;
+        }
+        .rechthoek2 {
+            height: 130px;
+            width: 180px;
+            margin-top: 260px;
+        }
+        .rechthoek3 {
+            height: 100px;
+            width: 150px;
+            margin-top: 420px;
+        }
+        .cirkel {
+            height: 400px;
+            width: 400px;
+            right: -20%;
+            bottom: -10%;
+        }
+    /* ARTICLE LIST */
+        section.article-list {
+            padding-top: 500px;
+            column-count: 2;
+            column-gap: 20px;
+            padding-bottom: 30px;
+        }
+        .article-list article{
+            position: relative;
+            
+        }
+        .article-list .subgroup {
+            font-size: 0.8rem;
+            padding-top: 3.5rem;
+
+        }
+        .article-list .date {
+            font-size: 0.6rem;
+        }
+        .article-list h2 {
+            font-size: 1rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 50px;
+        }
+        footer .socials a {
+            font-size: 0.8rem;
+        }
+        footer .socials img {
+            width: 15px;
+        }
+
+    
+}
+
+/*LAPTOP*/
+@media (min-width: 962px){
+    /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px;
+        }
+    /*HEADLINE*/
+        .headline {
+            width: 30rem;
+            display: flex;
+            margin-left: 250px; /* in het midden krijgen van rechthoek + afbeelding */
+            position: absolute;
+        }
+        section.headline article {
+            width:  30rem;
+        }
+        section.headline h1 {
+            font-size: 4rem;
+        }
+        .cat {
+            width: 200px;
+        }
+        .rechthoek2 {
+            height: 160px;
+            width: 200px;
+            margin-top: 260px;
+        }
+        .rechthoek3 {
+            height: 100px;
+            width: 150px;
+            margin-top: 500px;
+        }
+        .cirkel {
+            height: 500px;
+            width: 500px;
+            right: -20%;
+            bottom: -20%;    
+        }
+    /* ARTICLE LIST */
+        section.article-list {
+            padding: 0%;
+            padding-right: 5%;
+            width: 25%;
+            float: right;
+        }
+        .article-list article{
+            border-bottom: 1px solid var(--secondarycolor);
+            
+        }
+        .article-list .subgroup {
+            font-size: 1rem;
+            padding-top: 3.5rem;
+
+        }
+        .article-list .date {
+            font-size: 0.8rem;
+        }
+        .article-list h2 {
+            font-size: 1.3rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+            margin-top: 73%; /* footer naar beneden krijgen */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+
+}
+
+/*DESKTOP*/
+@media (min-width: 1200px){
+    /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px;
+        }
+    /*HEADLINE*/
+        .headline {
+            width: 30rem;
+            display: flex;
+            margin-left: 500px; /* in het midden krijgen van rechthoek + afbeelding */
+            position: absolute;
+        }
+        section.headline article {
+            width:  30rem;
+        }
+        section.headline h1 {
+            font-size: 6rem;
+            left: -55%;
+        }
+        .cat {
+            width: 200px;
+        }
+        .rechthoek2 {
+            height: 160px;
+            width: 400px;
+            margin-top: 260px;
+        }
+        .rechthoek3 {
+            height: 100px;
+            width: 300px;
+            margin-top: 500px;
+        }
+        .cirkel {
+            height: 600px;
+            width: 600px;
+            right: -20%;
+            bottom: -20%;
+        }
+    /* ARTICLE LIST */
+        section.article-list {
+            padding: 0%;
+            padding-right: 5%;
+            width: 30%;
+            float: right;
+        }
+        .article-list article{
+            border-bottom: 1px solid var(--secondarycolor);
+            
+        }
+        .article-list .subgroup {
+            font-size: 1rem;
+            padding-top: 5rem;
+
+        }
+        .article-list .date {
+            font-size: 0.8rem;
+        }
+        .article-list h2 {
+            font-size: 1.5rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+            margin-top: 50%; /* footer naar beneden krijgen */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+}

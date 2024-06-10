@@ -1,0 +1,380 @@
+* { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primarycolor: white;
+    --secondarycolor: rgb(81, 81, 81);
+    --accentcolorpink: #fdecf3;
+    --accentcolorgreen: #cfe5ce ;
+    --accentcolorpurple: #dddaee ;
+    --accentcoloryellow: #f6f4c3 ;
+}
+body.dark-theme {
+    --primarycolor: rgb(16, 16, 16);
+    --secondarycolor: white;
+    --accentcolorpink: #252525;
+    --accentcolorgreen: rgb(51, 51, 51);
+    --accentcolorpurple: rgb(33, 33, 33);
+    --accentcoloryellow: rgb(78, 78, 78);
+    transition: 1000ms ease-in-out;
+}
+@font-face {
+    font-family: MissionGothicThinItalic;
+    
+    src:
+     local('MissionGothicThinItalic'),
+    
+     url('../fonts/MissionGothicThinItalic.woff2') 
+     format('woff2'),
+        
+     url('../fonts/MissionGothicThinItalic.woff') 
+     format('woff'),
+        
+     url('../fonts/MissionGothicThinItalic.ttf')
+     format('truetype');
+}
+@font-face {
+    font-family: MissionGothicBold;
+
+    src: 
+    local('MissionGothicBold'),
+
+    url('../fonts/MissionGothicBold.woff2')
+    format('woff2'),
+
+    url('../fonts/MissionGothicBold.woff')
+    format('woff'),
+
+    url('../fonts/MissionGothicBold.ttf')
+    format('truetype');
+}
+@font-face {
+    font-family: GeneralSans-Extralight;
+
+    src:
+    local('GeneralSans-Extralight'),
+
+    url('../fonts/GeneralSans-Extralight.woff2')
+    format('woff2'),
+
+    url('../fonts/GeneralSans-Extralight.woff')
+    format('woff'),
+
+    url('../fonts/GeneralSans-Extralight.ttf')
+    format('truetype');
+}
+body {
+    background-color: var(--primarycolor);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* HEADER */
+header {
+    padding: 5%;
+    display: flex; /* i.f.v linkse en rechtse uitlijning */
+    justify-content: space-between; /* uitlijning links en rechts */
+}
+header .logoheader {
+    width: 140px;
+}
+.header-right{
+    display: flex;
+    align-items: center;
+}
+.header-right .menuknop,
+.header-right .darkmodeknop {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+}
+.header-right .menuknop img,
+.header-right .darkmodeknop img {
+    width: 18px;
+}
+.darkmodeknop img:hover {
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
+.menuknop img:hover {
+    transform: scale(1.3);
+    transition-duration: 0.5s;
+}
+
+/* ARTICLE LIST */
+section {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    position: relative;
+}
+.subgroup {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.7rem;
+    padding-top: 2rem;
+}
+.date {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.6rem;
+    padding-left: 0.2rem;
+}
+.titel {
+    color: var(--secondarycolor);
+    font-family: MissionGothicBold;
+    font-size: 0.9rem;
+    padding-bottom: 0.3rem;
+    padding-top: 0.1rem;
+}
+.titel:hover {
+    transform: scale(0.95);
+    transition-duration: 0.5s;
+}
+a {
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+.rechthoek1 {
+    height: 500px;
+    width: 100px;
+    background-color: var(--accentcoloryellow);
+    position: fixed;
+    top: 500px;
+    left: 50px;
+    overflow: hidden;
+    transition: 500ms ease-in-out;
+}
+.rechthoek2 {
+    height: 250px;
+    width: 100px;
+    background-color: var(--accentcolorpink);
+    position: fixed;
+    right: 0;
+    bottom: 150px;
+    transition: 500ms ease-in-out;
+}
+.cirkel {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: var(--accentcolorpurple);
+    position: fixed;
+    left: 30px;
+    top: 50px;
+    transition: 500ms ease-in-out;
+}
+
+/* FOOTER */
+footer {
+    margin: 5%;
+    position: relative; /* in functie van rechts uit te lijnen deel van footer */
+}
+footer .logofooter {
+    display: flex;
+    width: 30px;
+    margin: 0 auto;
+}
+footer .socials{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+footer .socials a {
+    font-family: MissionGothicBold;
+    font-size: 0.6rem;
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+footer .socials img {
+    width: 10px;
+    height: auto;
+}
+footer .socials a:first-child{
+    margin-right: 0.5rem; /*marge tussen link tekst en icons */
+}
+
+
+
+/*TABLET*/
+@media (min-width: 768px) and (max-width:962px){
+    /* HEADER */
+        header {
+            padding: 3%;
+        }
+        header .logoheader {
+            width: 200px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 25px;
+        }
+    /* ARTICLE LIST */
+        section {
+            padding-bottom: 5%;
+        }
+        .subgroup {
+            font-size: 1rem;
+            padding-top: 1.5rem;
+        }
+        .date {
+            font-size: 0.8rem;
+        }
+        .titel {
+            font-size: 1.2rem;
+        }
+        .rechthoek1 {
+            height: 500px;
+            width: 300px;
+            left: 100px;
+        }
+        .rechthoek2 {
+            height: 200px;
+            width: 300px;
+        }
+        .cirkel {
+            height: 400px;
+            width: 400px;
+            left: 200px;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 50px;
+        }
+        footer .socials a {
+            font-size: 0.8rem;
+        }
+        footer .socials img {
+            width: 15px;
+        }
+}
+
+/*LAPTOP*/
+@media (min-width: 962px){
+        /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px;
+        }
+    /* ARTICLE LIST */
+        section {
+            padding-bottom: 0%;
+        }
+        .subgroup {
+            font-size: 1rem;
+            padding-top: 1.5rem;
+        }
+        .date {
+            font-size: 0.8rem;
+        }
+        .titel {
+            font-size: 1.5rem;
+        }
+        .rechthoek1 {
+            height: 500px;
+            width: 400px;
+            left: 100px;
+        }
+        .rechthoek2 {
+            height: 200px;
+            width: 400px;
+        }
+        .cirkel {
+            height: 400px;
+            width: 400px;
+            left: 400px;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+}
+
+/*DESKTOP*/
+@media (min-width: 1200px){
+    /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px;
+        }
+    /* ARTICLE LIST */
+        section {
+            padding-bottom: 0%;
+        }
+        .subgroup {
+            font-size: 1rem;
+            padding-top: 1.5rem;
+        }
+        .date {
+            font-size: 0.8rem;
+        }
+        .titel {
+            font-size: 1.5rem;
+        }
+        .rechthoek1 {
+            height: 500px;
+            width: 500px;
+            left: 100px;
+        }
+        .rechthoek2 {
+            height: 200px;
+            width: 500px;
+        }
+        .cirkel {
+            height: 400px;
+            width: 400px;
+            left: 600px;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+}

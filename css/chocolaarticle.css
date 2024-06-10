@@ -1,0 +1,626 @@
+* { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primarycolor: white;
+    --secondarycolor: rgb(81, 81, 81);
+    --accentcolorpink: #fdecf3;
+    --accentcolorgreen: #cfe5ce ;
+    --accentcolorpurple: #dddaee ;
+    --accentcoloryellow: #f6f4c3 ;
+}
+body.dark-theme {
+    --primarycolor: rgb(16, 16, 16);
+    --secondarycolor: white;
+    --accentcolorpink: #252525;
+    --accentcolorgreen: rgb(51, 51, 51);
+    --accentcolorpurple: rgb(33, 33, 33);
+    --accentcoloryellow: rgb(78, 78, 78);
+    transition: 1000ms ease-in-out;
+}
+@font-face {
+    font-family: MissionGothicThinItalic;
+    
+    src:
+     local('MissionGothicThinItalic'),
+    
+     url('../fonts/MissionGothicThinItalic.woff2') 
+     format('woff2'),
+        
+     url('../fonts/MissionGothicThinItalic.woff') 
+     format('woff'),
+        
+     url('../fonts/MissionGothicThinItalic.ttf')
+     format('truetype');
+}
+@font-face {
+    font-family: MissionGothicBold;
+
+    src: 
+    local('MissionGothicBold'),
+
+    url('../fonts/MissionGothicBold.woff2')
+    format('woff2'),
+
+    url('../fonts/MissionGothicBold.woff')
+    format('woff'),
+
+    url('../fonts/MissionGothicBold.ttf')
+    format('truetype');
+}
+@font-face {
+    font-family: GeneralSans-Extralight;
+
+    src:
+    local('GeneralSans-Extralight'),
+
+    url('../fonts/GeneralSans-Extralight.woff2')
+    format('woff2'),
+
+    url('../fonts/GeneralSans-Extralight.woff')
+    format('woff'),
+
+    url('../fonts/GeneralSans-Extralight.ttf')
+    format('truetype');
+}
+@font-face {
+    font-family: GeneralSans-Regular;
+
+    src:
+    local('GeneralSans-Regular'),
+
+    url('../fonts/GeneralSans-Regular.woff2')
+    format('woff2'),
+
+    url('../fonts/GeneralSans-Regular.woff')
+    format('woff'),
+
+    url('../fonts/GeneralSans-Regular.ttf')
+    format('truetype');
+}
+
+body {
+    background-color: var(--primarycolor);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* HEADER */
+header {
+    padding: 5%;
+    display: flex; /* i.f.v linkse en rechtse uitlijning */
+    justify-content: space-between; /* uitlijning links en rechts */
+    position: relative;
+}
+header .logoheader {
+    width: 140px; 
+}
+.header-right{
+    display: flex; /* i.f.v. verticale uitlijning iconen*/
+    align-items: center;
+}
+.header-right .menuknop,
+.header-right .darkmodeknop {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+}
+.header-right .menuknop img,
+.header-right .darkmodeknop img {
+    width: 18px;
+}
+.darkmodeknop img:hover {
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
+.menuknop img:hover {
+    transform: scale(1.3);
+    transition-duration: 0.5s;
+}
+
+/*HEADLINE*/
+section.headline article {
+    width:  13rem;
+    background-color:var(--accentcolorpink);
+    border-radius: 20%;
+    margin: auto;
+    position: relative;
+    display: flex; /* om inhoud te centreren */
+    justify-content: center;
+}
+section.headline h1 {
+    color: var(--secondarycolor);
+    font-family: MissionGothicThinItalic;
+    position: absolute;
+    left: -30%;
+    font-size: 1.75rem;
+}
+
+/*ARTIKEL HEADER*/
+section {
+    text-align: center;
+}
+.titel {
+    color: var(--secondarycolor);
+    font-family: MissionGothicBold;
+    font-size: 1.4rem;
+    padding-bottom: 0.3rem;
+    padding-top: 0.4rem;
+}
+.date {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.7rem;
+    padding-bottom: 1.2rem;
+}
+.time {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Extralight;
+    font-size: 0.6rem;
+    padding-left: 0.2rem;
+}
+hr {
+    width: 70%;
+    margin: auto;
+}
+main .socials a {
+    font-family: MissionGothicBold;
+    font-size: 0.6rem;
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+main .socials img {
+    padding-bottom: 10px;
+    width: 15px;
+    height: auto;
+}
+
+/*MAIN*/
+main {
+    padding: 3rem;
+    padding-top: 0rem;
+    position: relative;
+}
+.rechthoekartikel {
+    width:  5rem;
+    height: 8rem;
+    background-color: transparent;
+    margin: auto;
+    position: static;
+    border-color: black;
+    border: solid 0.09rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    float: left;
+}
+.letterinrechthoek {
+    color: var(--secondarycolor);
+    font-family: GeneralSans-ExtraLight;
+    font-size: 5rem;
+    position: absolute;
+    padding-left: 5px; /*letter in het midden van vak*/
+    padding-top: 25px; /*letter in het midden van vak*/
+}
+.tekstnaastrechthoek {
+    font-size: 0.8rem;
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Regular;
+    display: flex;
+    padding-top: 1rem;
+}
+.tekstonderrechthoek {
+    font-size: 0.8rem;
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Regular;
+    padding-top: 1rem;
+}
+.tekstnaastpoppetje {
+    font-size: 0.8rem;
+    color: var(--secondarycolor);
+    font-family: GeneralSans-Regular;
+    padding-top: 1rem;
+}
+.poppetje {
+    float: right;
+    width: 9rem;
+}
+.rechthoek1 {
+    height: 500px;
+    width: 200px;
+    background-color: var(--accentcolorgreen);
+    position: fixed;
+    top: 200px;
+    left: 150px;
+    overflow: hidden;
+    transition: 500ms ease-in-out;
+}
+.rechthoek2 {
+    height: 80px;
+    width: 300px;
+    background-color: var(--accentcolorpink);
+    position: fixed;
+    top: 50px;
+    transition: 500ms ease-in-out;
+}
+.cirkel {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: var(--accentcolorpurple);
+    position: fixed;
+    top: 750px;
+    left: 50px;
+    transition: 500ms ease-in-out;
+}
+
+/*FORMULIER*/
+form {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+.verzenden {
+    width: 1.3rem;
+    margin-left: 0.1rem;
+}
+.verzenden:hover {
+    transform: scale(0.8);
+    transition-duration: 0.3s;
+}
+.invoerveld {
+    font-family: GeneralSans-ExtraLight;
+    font-size: 0.7rem;
+    height: 1.5rem;
+    width: 15rem;
+}
+/* FOOTER */
+footer {
+    margin: 5%;
+    position: relative; /* in functie van rechts uit te lijnen deel van footer */
+}
+footer .logofooter {
+    display: flex;
+    width: 30px;
+    margin: 0 auto;
+}
+
+footer .socials{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+footer .socials a {
+    font-family: MissionGothicBold;
+    font-size: 0.6rem;
+    color: var(--secondarycolor);
+    text-decoration: none;
+}
+footer .socials img {
+    width: 10px;
+    height: auto;
+}
+footer .socials a:first-child{
+    margin-right: 1rem; /*marge tussen link tekst en icons */
+}
+
+/*TABLET*/
+@media (min-width: 768px) and (max-width:962px){
+    /* HEADER */
+        header {
+            padding: 3%;
+        }
+        header .logoheader {
+            width: 200px;
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 25px;
+        }
+    /*ARTIKEL HEADER*/
+        section {
+            text-align: center;
+        }
+        .titel {
+            font-size: 1.3rem;
+        }
+        .date {
+            font-size: 0.9rem;
+        }
+        .time {
+            font-size: 0.7rem;
+        }
+        hr {
+            width: 80%;
+        }
+        main .socials img {
+            width: 17px;
+        }
+    /*MAIN*/
+        main {
+            padding: 7rem;
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+        }
+        .rechthoekartikel {
+            width:  6rem;
+            height: 9rem;
+        }
+        .letterinrechthoek {
+            font-size: 6rem;
+            padding-left: 5px; /*letter in het midden van vak*/
+        }
+        .tekstnaastrechthoek {
+            font-size: 0.9rem;
+        }
+        .tekstonderrechthoek {
+            font-size: 0.9rem;
+        }
+        .tekstnaastpoppetje {
+            font-size: 0.9rem;
+        }
+        .poppetje {
+            width: 13rem;
+        }
+        .rechthoek1 {
+            height: 600px;
+            width: 300px;
+            top: 250px;
+            left: 450px;
+        }
+        .rechthoek2 {
+            height: 140px;
+            width: 600px;
+            top: 50px;
+        }
+        .cirkel {
+            height: 350px;
+            width: 350px;
+            top: 700px;
+            left: 50px;
+        }
+    /*FORMULIER*/
+        form {
+            padding-top: 3rem;
+            padding-bottom: 1rem;
+        }
+        .verzenden {
+            width: 25px;
+        }
+        .invoerveld {
+            font-size: 0.8rem;
+            height: 1.6rem;
+            width: 15rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 50px;
+        }
+        footer .socials a {
+            font-size: 0.8rem;
+        }
+        footer .socials img {
+            width: 15px;
+        }
+}
+
+/*LAPTOP*/
+@media (min-width: 962px){
+    /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px; /* ipv 50%*/
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px; /*ipv 1.2rem*/
+        }
+    /*ARTIKEL HEADER*/
+        section {
+            text-align: center;
+        }
+        .titel {
+            font-size: 1.5rem;
+        }
+        .date {
+            font-size: 0.9rem;
+        }
+        .time {
+            font-size: 0.7rem;
+        }
+        hr {
+            width: 90%;
+        }
+        main .socials img {
+            width: 18px;
+        }
+    /*MAIN*/
+        main {
+            padding: 13rem;
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+        }
+        .rechthoekartikel {
+            width:  7rem;
+            height: 10rem;
+        }
+        .letterinrechthoek {
+            font-size: 7rem;
+            padding-left: 5px; /*letter in het midden van vak*/
+        }
+        .tekstnaastrechthoek {
+            font-size: 1rem;
+        }
+        .tekstonderrechthoek {
+            font-size: 1rem;
+        }
+        .tekstnaastpoppetje {
+            font-size: 1rem;
+        }
+        .poppetje {
+            width: 15rem;
+        }
+        .rechthoek1 {
+            height: 600px;
+            width: 350px;
+            top: 250px;
+            left: 600px;
+        }
+        .rechthoek2 {
+            height: 140px;
+            width: 700px;
+            top: 50px;
+        }
+        .cirkel {
+            height: 400px;
+            width: 400px;
+            top: 700px;
+            left: 50px;
+        }
+    /*FORMULIER*/
+        form {
+            padding-top: 5rem;
+        }
+        .verzenden {
+            width: 30px;
+        }
+        .invoerveld {
+            font-size: 0.9rem;
+            height: 2rem;
+            width: 20rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+}
+
+/*DESKTOP*/
+@media (min-width: 1200px){
+        /* HEADER */
+        header {
+            padding: 2%;
+        }
+        header .logoheader {
+            width: 250px; /* ipv 50%*/
+        }
+        .header-right .menuknop img,
+        .header-right .darkmodeknop img {
+            width: 30px; /*ipv 1.2rem*/
+        }
+    /*ARTIKEL HEADER*/
+        section {
+            text-align: center;
+        }
+        .titel {
+            font-size: 2rem;
+        }
+        .date {
+            font-size: 1rem;
+        }
+        .time {
+            font-size: 0.8rem;
+        }
+        hr {
+            width: 50%;
+        }
+        main .socials img {
+            width: 20px;
+        }
+    /*MAIN*/
+        main {
+            padding: 20rem;
+            padding-top: 0rem;
+            padding-bottom: 0rem;
+        }
+        .rechthoekartikel {
+            width:  7rem;
+            height: 10rem;
+        }
+        .letterinrechthoek {
+            font-size: 7rem;
+            padding-left: 5px; /*letter in het midden van vak*/
+        }
+        .tekstnaastrechthoek {
+            font-size: 1rem;
+        }
+        .tekstonderrechthoek {
+            font-size: 1rem;
+        }
+        .tekstnaastpoppetje {
+            font-size: 1rem;
+        }
+        .poppetje {
+            width: 15rem;
+        }
+        .rechthoek1 {
+            height: 600px;
+            width: 400px;
+            top: 250px;
+            left: 950px;
+        }
+        .rechthoek2 {
+            height: 140px;
+            width: 1000px;
+            top: 50px;
+        }
+        .cirkel {
+            height: 500px;
+            width: 500px;
+            top: 600px;
+            left: 100px;
+        }
+    /*FORMULIER*/
+        form {
+            padding-top: 5rem;
+        }
+        .verzenden {
+            width: 30px;
+        }
+        .invoerveld {
+            font-size: 0.9rem;
+            height: 2rem;
+            width: 20rem;
+        }
+    /* FOOTER */
+        footer {
+            margin: 3%;
+            position: relative; /* in functie van rechts uit te lijnen deel van footer */
+        }
+        footer .logofooter {
+            width: 60px;
+        }
+        footer .socials a {
+            font-size: 1rem;
+        }
+        footer .socials img {
+            width: 20px;
+        }
+}
