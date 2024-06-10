@@ -26,36 +26,36 @@ if(icon){
 
         //Michiel: Alle if/else statement herleid tot één maakt code leesbaarder en compacter
         if(document.body.classList.contains("dark-theme")){
-            icon.src = "/img/lightmode.png";
-            logogroot.src = "/img/logogrootwit.png";
-            logoklein.src = "/img/logokleinwit.png";
-            menuicon.src = "/img/menuwit.png";
-            share.src = "/img/sharewit.png";
-            facebook.src = "/img/facebookwit.png";
-            instagram.src = "/img/instagramwit.png";
+            icon.src = "./img/lightmode.png";
+            logogroot.src = "./img/logogrootwit.png";
+            logoklein.src = "./img/logokleinwit.png";
+            menuicon.src = "./img/menuwit.png";
+            share.src = "./img/sharewit.png";
+            facebook.src = "./img/facebookwit.png";
+            instagram.src = "./img/instagramwit.png";
             //Michiel: onderstaande items niet gevonden op alle pagina's. 
             // Indien je deze nog in html gaat toegevoegen mogen de if statements verwijderd worden.
             // Anders kan je opteren om een afzonderlijk javascript bestand aan te maken per pagina.
-            if(pinterest) pinterest.src = "/img/pinterestwit.png";
-            if(twitter) twitter.src = "/img/twitterwit.png";
-            if(send) send.src = "/img/sendwit.png";
-            if(shareFooter) shareFooter.src = "/img/sharewit.png";
-            if(facebookFooter) facebookFooter.src = "/img/facebookwit.png";
-            if(instagramFooter) instagramFooter.src = "/img/instagramwit.png";
+            if(pinterest) pinterest.src = "./img/pinterestwit.png";
+            if(twitter) twitter.src = "./img/twitterwit.png";
+            if(send) send.src = "./img/sendwit.png";
+            if(shareFooter) shareFooter.src = "./img/sharewit.png";
+            if(facebookFooter) facebookFooter.src = "./img/facebookwit.png";
+            if(instagramFooter) instagramFooter.src = "./img/instagramwit.png";
         }else{
-            icon.src = "/img/darkmode.png";
-            logogroot.src = "/img/logogrootgrijs.png";
-            logoklein.src = "/img/logokleingrijs.png";
-            menuicon.src = "/img/menu.png";
-            share.src = "/img/share.png";
-            facebook.src = "/img/facebook.png";
-            instagram.src = "/img/instagram.png";
-            if(pinterest) pinterest.src = "/img/pinterest.png";
-            if(twitter) twitter.src = "/img/twitter.png";
-            if(send) send.src = "/img/send.png";
-            if(shareFooter) shareFooter.src = "/img/share.png";
-            if(facebookFooter) facebookFooter.src = "/img/facebook.png";
-            if(instagramFooter) instagramFooter.src = "/img/instagram.png";
+            icon.src = "./img/darkmode.png";
+            logogroot.src = "./img/logogrootgrijs.png";
+            logoklein.src = "./img/logokleingrijs.png";
+            menuicon.src = "./img/menu.png";
+            share.src = "./img/share.png";
+            facebook.src = "./img/facebook.png";
+            instagram.src = "./img/instagram.png";
+            if(pinterest) pinterest.src = "./img/pinterest.png";
+            if(twitter) twitter.src = "./img/twitter.png";
+            if(send) send.src = "./img/send.png";
+            if(shareFooter) shareFooter.src = "./img/share.png";
+            if(facebookFooter) facebookFooter.src = "./img/facebook.png";
+            if(instagramFooter) instagramFooter.src = "./img/instagram.png";
         }
     })
 
